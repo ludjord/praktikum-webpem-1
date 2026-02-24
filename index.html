@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill Coffee | Authentic Classic Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">CHILL COFFEE</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#cart">Pesanan</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>enjoy coffee while relaxing</h1>
+           
+            <a href="#menu" class="btn-primary">Pesan Sekarang</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="menu" class="menu-section">
+            <h2 class="section-title">choose your favorite coffe</h2>
+            <div class="menu-container">
+                <div class="menu-card" data-name="Espresso" data-price="15000">
+                    <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400" alt="Espresso" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Espresso</h3>
+                        <p>Kopi murni dengan aroma kuat.</p>
+                        <span class="price">Rp 15.000</span>
+                    </div>
+                    <button type="button" class="add-btn">Tambah +</button>
+                </div>
+                <div class="menu-card" data-name="Cafe Latte" data-price="20000">
+                    <img src="https://images.unsplash.com/photo-1593443320739-77f74939d0da?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Latte" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Cafe Latte</h3>
+                        <p>Susu steam lembut & espresso.</p>
+                        <span class="price">Rp 20.000</span>
+                    </div>
+                    <button type="button" class="add-btn">Tambah +</button>
+                </div>
+                <div class="menu-card" data-name="Americano" data-price="18000">
+                    <img src="https://akcdn.detik.net.id/community/media/visual/2020/10/05/iced-americano.jpeg?w=724" alt="americano" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Americano</h3>
+                        <p>espresso dan air dingin.</p>
+                        <span class="price">Rp 18.000</span>
+                    </div>
+                    <button type="button" class="add-btn">Tambah +</button>
+                </div>
+                <div class="menu-card" data-name="Vietnam Drip" data-price="19000">
+                    <img src="https://down-id.img.susercontent.com/file/e3f134d311bc1cf6d426c5131fb9b009@resize_w900_nl.webp" alt="americano" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Vietnam Drip</h3>
+                        <p>kopi diseduh dengan filter logam.</p>
+                        <span class="price">Rp 19.000</span>
+                    </div>
+                    <button type="button" class="add-btn">Tambah +</button>
+                </div>
+                <div class="menu-card" data-name="Kopi aren" data-price="22000">
+                    <img src="https://akcdn.detik.net.id/community/media/visual/2024/10/16/es-kopi-susu-gula-aren.jpeg?w=700&q=90" alt="Kopi Aren" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Kopi gula aren</h3>
+                        <p>kopi susu dengan gula aren.</p>
+                        <span class="price">Rp 22.000</span>
+                    </div>
+                    <button type="button" class="add-btn">Tambah +</button>
+                </div>
+                <div class="menu-card" data-name="Pandan Latte" data-price="18000">
+                    <img src="https://image.idntimes.com/post/20221120/christian-bowen-yeozi-9eifc-unsplash-imresizer-5f33a6106b7b2abdfec00ff311918826-eefcdcb54ae408ea8a2bd6169a5d22e6.jpg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75" alt="Pandan Latte" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Pandan Latte</h3>
+                        <p>espresso susu dan sirup pandan</p>
+                        <span class="price">Rp 25.000</span>
+                    </div>
+                    <button type="button" class="add-btn">Tambah +</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="cart-section">
+            <div class="cart-box">
+                <h2 class="cart-title">Ringkasan Pesanan</h2>
+                <form id="orderForm" action="https://formspree.io/f/your-id" method="POST">
+                    <div id="cart-list">
+                        <p class="empty-text">Keranjang masih kosong.</p>
+                    </div>
+                    
+                    <input type="hidden" name="Detail_Pesanan" id="hidden-cart-input">
+                    <input type="hidden" name="Total_Bayar" id="hidden-total-input">
+
+                    <div class="user-info" id="user-info" style="display:none;">
+                        <h3>Lengkapi Data</h3>
+                        <input type="text" name="Nama" placeholder="Nama Lengkap" required>
+                        <input type="text" name="Lokasi" placeholder="Nomor Meja" required>
+                    </div>
+
+                    <div class="cart-footer">
+                        <div class="total-area">
+                            <span>Total Bayar:</span>
+                            <span id="total-price">Rp 0</span>
+                        </div>
+                        <button type="submit" class="checkout-btn" id="confirm-btn" disabled>Konfirmasi Pesanan</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="success-icon">☕</div>
+            <h2>Pesanan Berhasil!</h2>
+            <p>Terima kasih. Pesanan Anda telah kami terima dan sedang diproses oleh barista kami.</p>
+            <button class="btn-primary" onclick="closeModal()">Selesai</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Chill Coffee. Teman santai di setiap suasana</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
